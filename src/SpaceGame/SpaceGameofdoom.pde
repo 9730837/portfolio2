@@ -11,6 +11,9 @@ boolean play;
 int m, n;
 int level;
 PImage startscreen;
+float accuracy;
+int shotsFired;
+int shotsHit;
 void setup() {
   gameOverScreen = loadImage("gameoverscreen.png");
   m = mouseX;
@@ -23,6 +26,9 @@ void setup() {
   rockTimer.start();
   puTimer.start();
   ammo = 100;
+  accuracy = 0.0;
+  shotsFired = 0;
+  shotsHit = 0;
   play = false;
   level = 1;
   startscreen = loadImage("startscreen.png");
@@ -152,7 +158,6 @@ void draw() {
       healthBar();
       if (rocket.health<10) {
         gameOver();
-        image(gameOverScreen, width/2, height/2);
       }
     }
   }
@@ -162,7 +167,9 @@ void mousePressed() {
   if (rocket.ammo > 0) {
     lasers.add(new Laser(rocket.x, rocket.y));
     rocket.ammo--;
+    shotsFired++;
   }
+  
 }
 
 void infoPanel() {
@@ -200,5 +207,10 @@ void startScreen() {
   }
 }
 void gameOver() {
+  image(gameOverScreen, width/2, height/2);
+  accuracy = (shotsHit / shotsFired) * 100;
+  textSize(50);
+  fill(255);
+  text("accuracy: " + accuracy, 70, 400);
   noLoop();
 }
