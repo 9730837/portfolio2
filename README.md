@@ -16,3 +16,11 @@ Pilot a spaceship and shoot down falling rocks to earn points! But watch out —
   ### [Castle Corridors](https://github.com/pwspew/castlecorridors)
   (https://github.com/pwspew/castlecorridors)
 
+
+  ### [SkiFree 2025](https://github.com/pwspew/compProcessing-project-skifree)
+  (https://github.com/pwspew/compProcessing-project-skifree)
+
+  ### [Calculator](https://github.com/9730837/ComputerProgramming)
+  (https://github.com/9730837/ComputerProgramming)
+  
+
